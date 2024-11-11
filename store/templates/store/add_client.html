@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавить клиента</title>
+</head>
+<body>
+    <h1>Добавить клиента</h1>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Добавить</button>
+    </form>
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</body>
+</html>

@@ -1,0 +1,13 @@
+db.sqlite3
+
+*.log
+
+__pycache__/
+*.py[cod]
+
+.env
+
+/media/*
+!media/product_photos/.gitkeep
+
+static/

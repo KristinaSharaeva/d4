@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Главная страница</title>
+</head>
+<body>
+    <h1>Django-сайт</h1>
+
+    <nav>
+        <ul>
+            <li><a href="{% url 'add_client' %}">Добавить клиента</a></li>
+            <li><a href="{% url 'add_order' %}">Добавить заказ</a></li>
+            <li><a href="{% url 'add_product' %}">Добавить продукт</a></li>
+	    <li><a href="{% url 'client_list' %}">Список клиентов и просмотр заказов</a></li>
+            <li><a href="{% url 'about' %}">О нас</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

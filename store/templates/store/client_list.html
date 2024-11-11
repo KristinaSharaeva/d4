@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Список клиентов</title>
+</head>
+<body>
+    <h2>Список клиентов</h2>
+    <ul>
+        {% for client in clients %}
+            <li>
+                <a href="{% url 'client_orders' client.id %}">{{ client.name }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'home' %}">На главную</a>
+</body>
+</html>

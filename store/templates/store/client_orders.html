@@ -1,0 +1,48 @@
+orders = Order.objects.filter(client=client).order_by('-ordered_at')
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заказы клиента</title>
+</head>
+<body>
+    <h2>Заказы клиента: {{ client.name }}</h2>
+
+    <h3>Заказы за последние 7 дней</h3>
+    {% if last_7_days_orders %}
+        <ul>
+        {% for order in last_7_days_orders %}
+            <li>ID заказа: {{ order.id }}, Дата: {{ order.ordered_at }}, Сумма: {{ order.total_price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет заказов за последние 7 дней.</p>
+    {% endif %}
+
+    <h3>Заказы за последние 30 дней</h3>
+    {% if last_30_days_orders %}
+        <ul>
+        {% for order in last_30_days_orders %}
+            <li>ID заказа: {{ order.id }}, Дата: {{ order.ordered_at }}, Сумма: {{ order.total_price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет заказов за последние 30 дней.</p>
+    {% endif %}
+
+    <h3>Заказы за последние 365 дней</h3>
+    {% if last_365_days_orders %}
+        <ul>
+        {% for order in last_365_days_orders %}
+            <li>ID заказа: {{ order.id }}, Дата: {{ order.ordered_at }}, Сумма: {{ order.total_price }}</li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>Нет заказов за последние 365 дней.</p>
+    {% endif %}
+
+
+    <a href="{% url 'home' %}">Вернуться на главную</a>
+</body>
+</html>

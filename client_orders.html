@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Заказы клиента</title>
+</head>
+<body>
+    <h2>Заказы {{ client.name }}</h2>
+    <ul>
+        {% for order in orders %}
+            <li>Заказ №{{ order.id }} на сумму {{ order.total_price }} руб. ({{ order.ordered_at }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'client_list' %}">Назад к списку клиентов</a>
+</body>
+</html>
